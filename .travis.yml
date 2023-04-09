@@ -1,0 +1,9 @@
+sudo: requierd
+services:
+  - docker
+
+before_install:
+  - docker build -t liranb6/docker-react -f Dockerfile.dev .
+
+script:
+  -  docker run liranb6/docker-react npm run test -- --covrage
